@@ -1,0 +1,18 @@
+<h1>you can add new city  </h1>
+<%= link_to 'add new city', new_city_path %>
+
+
+<table>
+	<tr>
+		<th> City name </th>	
+	</tr>
+		<% @city.each do |c| %>
+	<tr>
+		<td><%= c.name %></td>
+		<td> <%= link_to 'edit', edit_city_path(c)%></td>
+		<td> <%= link_to 'show', city_path(c)%></td>
+		<td> <%= link_to 'delete', city_path(c), method: :delete, data: {confirm: 'are you sure' } %></td>
+
+	</tr>
+	<% end %> 
+</table>

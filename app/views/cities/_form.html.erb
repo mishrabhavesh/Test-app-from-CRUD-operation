@@ -1,0 +1,15 @@
+<% if @city.errors.any? %>
+<ul>
+	<h3> The following error failed to create the city </h3>
+<% @city.errors.full_messages.each do |msg|%>
+	<li> <%= msg %> </li>
+	<% end %>
+</ul>
+<% end %>
+<%= form_for @city do |f| %>
+	<p>
+		<%= f.label :name %> </p> <br>
+		<%= f.text_field :name %>
+		<%= f.submit %>
+	</p>
+<% end %>
